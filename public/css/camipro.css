@@ -1,0 +1,147 @@
+/* ======================
+ CAMIPRO CARDS
+========================= */
+
+/* ===== Event header ===== */
+div.event_header {
+	text-align: center;
+	padding-bottom:10px;
+}
+
+/* ======= Camipro ======= */
+div.camipro {
+	position: relative;
+	border:0px;
+	width: 315px;
+	margin :0 auto;
+	margin-bottom: 70px;
+	z-index: 2;
+}
+
+
+/* ======= Whitebox ======= */
+div.whitebox {
+	position: relative;
+	top:0px;
+	height:155px;
+	width: 310px;
+	background-color: #FFF;
+	padding : 2px;
+	z-index: 1;
+	margin-bottom: 15px;
+}
+
+/* Colored rectangle on camipro */
+div.camipro_color{
+	position: relative;
+	height:100%;
+	float:left;
+	padding:0px;
+	margin: 0px;
+	/*
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	*/
+	border-radius: 0px;
+	overflow: hidden;
+}
+
+/* Camipro header */
+div.camipro_header {
+	position: absolute;
+	top:15px;
+	left:15px;
+	z-index: 1;
+}
+
+/* Camipro footer */
+div.camipro_footer {
+	position: absolute;
+	bottom: 10px;
+	z-index: 1;
+	text-align: center;
+	left:0px;
+	right:0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width:400px;
+}
+
+/* ===== blackbox ====== */
+div.blackbox {
+	position: relative;
+	height:155px;
+	width: 310px;
+	font-size: 24px;
+	line-height: 34px;
+	background-color: #4C4C4D;
+	padding : 2px;
+	z-index: 1;
+}
+div.blackbox.compact {
+	height:40px;
+	font-size: 18px;
+	line-height: normal;
+	text-align: center;
+}
+
+.arrow_up {
+	width: 0; 
+	height: 0; 
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 10px solid #4C4C4D;
+}
+
+div.blackbox_info {
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	color : #FFF;
+}
+
+div.blackbox_logo {
+	position: absolute;
+	bottom: 10px;
+	right:20px;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+
+/* ======= Special camipros ======= */
+.icon_plus {
+	background-image: url('/img/icon_plus.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.icon_check {
+	background-image: url('/img/icon_check.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.icon_location {
+	background-image: url('/img/icon_location.png');
+	background-repeat: no-repeat;
+	background-position: center 40%;
+}
+
+.icon_time {
+	background-image: url('/img/icon_time.png');
+	background-repeat: no-repeat;
+	background-position: center 40%;
+}
+
+/* ======= Special elements ======== */
+
+/* Sections */
+span.section {
+	font-size: 18px;
+	color: rgba(255,255,255,0.2);
+}
+

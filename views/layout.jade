@@ -1,29 +1,39 @@
-!!! 5
+!!!5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
-  body
-    header
-      nav
-        ul
-          li 
-            a(href="/") Home
-          li 
-            a(href="/about") About
-          li 
-            a(href="/contact") Contact
-    section#wrapper
-      block content
-      footer 
-        section.css-table
-          section.four-column
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+	head
+		title expaflyr | #{title}
+		base(href='/')
+		link(href='http://fonts.googleapis.com/css?family=Raleway:300', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='css/layout.css')
+		block css
+	body
+		script(type='text/javascript', src='js/jquery-1.8.2.min.js')
+		script(type='text/javascript', src='js/options.js')
+		script(type='text/javascript', src='js/search.js')
+		block js
+
+		.main_header
+			#header_logo
+				img(src='img/expa_logo.png', alt='')
+			// input#header_transparent(type='text',value=header, onkeyup='state = searchKey(state, event);',onclick='searchFocus(state);')
+			input#header_transparent(type='text',value=header)
+
+		.dropdown#menu
+			a.dropdown_option.color_lightblue(href='/new') new event
+			a.dropdown_option.color_red(href='/u') my profile
+			a.dropdown_option.color_yellow(href='/feed') my feed
+			// a.dropdown_option.color_purple(href='/f') my friends
+			// a.dropdown_option.color_lightgreen(href='/a') my follows
+			// a.dropdown_option.color_darkblue(href='/new') search
+			a.dropdown_option.color_purple(href='/logout') logout
+			a.dropdown_option.color_black#close close
+		.dropdown#search
+			#search_results
+			input#search_select(type='hidden')
+			a.dropdown_option.color_black#close_search close
+
+		.main_center
+			block content
+			.footer_space
+
+		block footer

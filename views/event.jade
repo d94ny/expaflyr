@@ -1,0 +1,51 @@
+-# Extend the layout (need a #title and #header)
+
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/camipro.css')
+	link(rel='stylesheet', href='css/social.css')
+
+block js
+	script(type='text/javascript', src='js/ajax.js')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	.camipro
+		.whitebox
+
+			- if (sections!=null&&sections instanceof Array)
+				- for (var i=0;i<sections.length;i++)
+					div(class='camipro_color color_#{sections[i]}', style='width : #{1/sections.length*100}%;')
+						.camipro_footer
+							span.section #{sections[i]}
+			- else
+				.camipro_partition1_1.camipro_color.color_red
+						.camipro_footer
+							span.section All Students
+
+		.arrow_up
+		.blackbox
+			.blackbox_info.
+				#{location}<br>
+				#{date}<br>
+				#{time}
+			.blackbox_logo
+				img(src='img/expa_logo.png', alt='')
+
+
+block footer
+	.main_footer
+		- if(attends&&attends == 2 )
+			div.line
+				span.line_text Are you going ?
+			a.button(onclick="handleEvent('#{eventid}')") I attend
+		- else if(attends&&attends == 3 )
+			div.line
+				span.line_text Changed your mind ?
+			a.button(onclick="handleEvent('#{eventid}')") Cancel
+		- else 
+			div.line
+					span.line_text Are you going ?
+				a.button(href='/') Join expaflyr !

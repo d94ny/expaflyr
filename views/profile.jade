@@ -1,0 +1,36 @@
+-# Extend the layout (need a #title and #header)
+-#
+
+extend layout
+block css
+	link(rel='stylesheet', href='css/social.css')
+
+block js
+	script(type='text/javascript', src='js/ajax.js')
+
+block content
+
+	.social_holder
+		img(src='img/profile.png', alt='', style='padding:15px;')
+		| <br>
+		| #{username}
+	.social_holder
+		span.points.kudos #{kudos}<br>
+		| kudos
+
+
+block footer
+	.main_footer
+
+			- if(friend&&friend == 2 )
+				div.line
+					span.line_text Know him ?
+				a.button(onclick="handleFriend('#{username}')") Add as friend
+			- else if(friend&&friend == 3 )
+				div.line
+					span.line_text Bored ?
+				a.button(onclick="handleFriend('#{username}')") Remove
+			- else 
+				div.line
+					span.line_text Know him ?
+				a.button(href='/') Join expaflyr !

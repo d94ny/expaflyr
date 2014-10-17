@@ -1,0 +1,183 @@
+-# Extend the layout (need a #title and #header)
+
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/camipro.css')
+	link(rel='stylesheet', href='css/social.css')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	.camipro
+		form(action='/add',method='post',id='new_form')
+			input(type='text', name='name', value='name')
+			.whitebox
+				div(class='camipro_color color_red', style='width : 100%;')
+					table.section_table
+						tr
+							td.nolign
+								label
+									input(type='checkbox',name='sections', value='MA')
+									| MA
+							td
+								label
+									input(type='checkbox',name='sections', value='PH')
+									| PH
+							td
+								label
+									input(type='checkbox',name='sections', value='IN')
+									| IN
+							td
+								label
+									input(type='checkbox',name='sections', value='SC')
+									| SC
+						tr
+							td.nolign
+								label
+									input(type='checkbox',name='sections', value='EL')
+									| EL
+							td
+								label
+									input(type='checkbox',name='sections', value='CMS')
+									| CMS
+							td
+								label
+									input(type='checkbox',name='sections', value='EME')
+									| EME
+							td
+								label
+									input(type='checkbox',name='sections', value='CGC')
+									| CGC
+						tr
+							td.nolign
+								label
+									input(type='checkbox',name='sections', value='SV')
+									| SV
+							td
+								label
+									input(type='checkbox',name='sections', value='AR')
+									| AR
+							td
+								label
+									input(type='checkbox',name='sections', value='GC')
+									| GC
+							td
+								label
+									input(type='checkbox',name='sections', value='SIE')
+									| SIE
+						tr
+							td.nolign
+								label
+									input(type='checkbox',name='sections', value='MT')
+									| MT
+							td
+								label
+									input(type='checkbox',name='sections', value='GM')
+									| GM
+							td
+								label
+									input(type='checkbox',name='sections', value='IF')
+									| IF
+							td
+								label
+									input(type='checkbox',name='sections', value='MX')
+									| MX
+						tr
+							td.nolign
+								label
+									input(type='checkbox',name='sections', value='MTE')
+									| MTE
+							td
+								label
+									input(type='checkbox', onclick='selectAll(this.checked)')
+									| ALL !
+
+			.arrow_up
+			.blackbox
+				.blackbox_info
+						input(type='text', name='location', value='location')
+						| <br>
+						select(name='day')
+							option(value='01', selected) dd
+							option(value='01') 01
+							option(value='02') 02
+							option(value='03') 03
+							option(value='04') 04
+							option(value='05') 05
+							option(value='06') 06
+							option(value='07') 07
+							option(value='08') 08
+							option(value='09') 09
+							option(value='10') 10
+							option(value='11') 11
+							option(value='12') 12
+							option(value='13') 13
+							option(value='14') 14
+							option(value='15') 15
+							option(value='16') 16
+							option(value='17') 17
+							option(value='18') 18
+							option(value='19') 19
+							option(value='20') 20
+							option(value='21') 21
+							option(value='22') 22
+							option(value='23') 23
+							option(value='24') 24
+							option(value='25') 25
+							option(value='26') 26
+							option(value='27') 27
+							option(value='28') 28
+							option(value='29') 29
+							option(value='30') 30
+							option(value='31') 31
+						select(name='month')
+							option(value='01', selected) mm
+							option(value='01') 01
+							option(value='02') 02
+							option(value='03') 03
+							option(value='04') 04
+							option(value='05') 05
+							option(value='06') 06
+							option(value='07') 07
+							option(value='08') 08
+							option(value='09') 09
+							option(value='10') 10
+							option(value='11') 11
+							option(value='12') 12
+						| <br>
+						select(name='time_hours')
+							option(value='01') 01
+							option(value='02') 02
+							option(value='03') 03
+							option(value='04') 04
+							option(value='05') 05
+							option(value='06') 06
+							option(value='07') 07
+							option(value='08') 08
+							option(value='09', selected) 09
+							option(value='10') 10
+							option(value='11') 11
+							option(value='12') 12
+						| :
+						select(name='time_minutes')
+							option(value='00', selected) 00
+							option(value='15') 15
+							option(value='30') 30
+							option(value='45') 45
+						select(name='time_suffix')
+							option(value='am') am
+							option(value='pm', selected) pm
+				.blackbox_logo
+					select(name='assos')
+						option(value='expa', selected) by
+						option(value='agepoly') agepoly
+						option(value='coach') coach
+						option(value='expa') other
+
+
+block footer
+	.main_footer
+		div.line
+			span.line_text All done ?
+		a.button(onclick='document.getElementById("new_form").submit()') Save !

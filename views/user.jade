@@ -1,0 +1,25 @@
+-# Extend the layout (need a #title and #header)
+-#
+
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/social.css')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	.social_holder
+		img(src='img/profile.png', alt='', style='padding:15px;')
+		| <br>
+		| #{username}
+	.social_holder
+		a.points.kudos(href='/h') #{kudos}<br>
+		| kudos
+
+
+block footer
+	.main_footer
+			div.line
+				span.line_text Too much awesomeness ?
+			a.button(href='/logout') Logout

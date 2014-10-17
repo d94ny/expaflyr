@@ -1,0 +1,36 @@
+-# Extend the layout (need a #title and #header)
+-#
+
+extend layout
+block css
+	link(rel='stylesheet', href='css/social.css')
+
+block js
+	script(type='text/javascript', src='js/ajax.js')
+
+block content
+
+	.social_holder
+		img(src='img/assos.png', alt='', style='padding:15px;')
+		| <br>
+		| #{username}
+	.social_holder
+		span.points.prestige #{prestige}<br>
+		| prestige
+
+
+block footer
+	.main_footer
+		
+		- if(following == 2 )
+			div.line
+				span.line_text Like them ?
+			a.button(onclick="handleFollow('#{username}')") Follow
+		- else if(following == 3 )
+			div.line
+				span.line_text Bored ?
+			a.button(onclick="handleFollow('#{username}')") Unfollow
+		- else 
+			div.line
+				span.line_text Like them ?
+			a.button(href='/') Join expaflyr !

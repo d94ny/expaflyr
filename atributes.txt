@@ -1,0 +1,22 @@
+Expaflyr :
+
+Search Events, Friends, Sections, Associations and Bars
+
+Event {
+	name : String,
+	date : timestamp,
+	location : String,
+	sections : [Strings],
+	data : [Ints]
+}
+
+Student {
+	name : String,
+	sciper : int,
+	gender : String,
+	section : String,
+	semester : String,
+	camipoints : int,
+	timetable : ?
+}
+q

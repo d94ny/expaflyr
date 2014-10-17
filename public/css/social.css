@@ -1,0 +1,54 @@
+/* ======================
+ SOCIAL Contact
+========================= */
+
+/* ===== Name ======= */
+.friend {
+	color:#BD2F50;
+}
+
+.association {
+	color:#4D8C99;
+}
+
+.popular {
+	color:#0b7101;
+}
+
+.action {
+	color:#666;
+}
+
+.kudos {
+	color:#BD2F50;
+}
+
+.prestige {
+	color:#4D8C99;
+}
+
+.subject {
+	color : #fff;
+}
+
+.event_header a {
+	text-decoration: none;
+}
+
+/* ==== Profile ==== */
+
+div.social_holder {
+	text-align: center;
+	padding-bottom:30px;
+	font-size: 18px;
+	color:#FFF;
+}
+
+a.points, span.points {
+	text-decoration: none;
+	font-size: 42px;
+}
+
+a.points:hover {
+	color:#FFF;
+}

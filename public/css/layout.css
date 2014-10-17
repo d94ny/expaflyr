@@ -1,0 +1,284 @@
+/*
+=========================
+COLOR THEME :
+RED : #BD2F50
+BLUE : #4D8C99
+RED - INVERTED (GREEN/BLUE) : #42D0AF
+BLUE - INVERTED (BROWN) : #B27366
+=========================
+*/
+
+/* ======================
+ INPUTS AND BUTTONS
+========================= */
+
+/* ======= Inputs ======= */
+input {
+	font-family:Arial, Helvetica, sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	/*font-family: 'Raleway', sans-serif;*/
+	 -webkit-appearance: none;
+    border-radius: 0;
+    font-size: 16px;
+}
+input[type="text"]{
+	background-color: #FFF;
+	color:#000;
+	border:0px;
+	border-top:3px solid #999;
+    margin:5px;
+    padding: 5px 10px;
+    max-width: 80px;
+    width: 100%;
+}
+
+input[type="password"]{
+	background-color: #FFF;
+	color:#000;
+	border:0px;
+	border-top:3px solid #999;
+    margin:5px;
+    padding: 5px 10px;
+    max-width: 80px;
+    width: 100%;
+}
+input[type="checkbox"]{
+    -webkit-appearance: checkbox;
+}
+
+input.long {
+	max-width: 160px;
+}
+
+select.small, input.small {
+	max-width: 40px;
+}
+
+select {
+	font-family:Arial, Helvetica, sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	-webkit-appearance: none;
+	font-size: 16px;
+	border:0px;
+	border-top:3px solid #999;
+	border-radius: 0;
+	margin:5px;
+    padding: 5px 10px;
+    background-color: #FFF;
+	color:#000;
+}
+
+/* ======= Links ========= */
+a {
+	text-decoration: underline;
+	color : #87CDAB;
+}
+
+/* ======= Buttons ======= */
+a.button,input.button,div.button{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    display: inline-block;
+    margin:5px;
+    background-color: #BD2F50;
+    color: #FFF;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    border: 0px;
+    border-bottom: 3px solid #88000c;
+}
+a.button:hover,input.button:hover,div.button:hover{
+    cursor: pointer;
+    background-color: #4D8C99;
+    text-decoration: none;
+    border-bottom: 3px solid #264C54;
+}
+
+/* ======================
+ COLORS
+========================= */
+.color_black, .color_all {background-color: #000;}
+.color_lightgreen {background-color: #6EBA44;}
+.color_darkblue,.color_PH,.color_MA {background-color: #003047;} /*BS = PH, MA,CGC*/
+.color_lightblue,.color_IN {background-color: #007ba5;} /*BS*/
+.color_blue,.color_SC,.color_EL{background-color: #1bb5b5} /*IC = IN & SC*/
+.color_yellow,.color_CMS,.color_EME {background-color: #daa521;} /*SHS*/
+.color_darkgreen, .color_CGC {background-color: #0b7101;} /*SV = SV*/
+.color_green,.color_SV {background-color: #6fba01;} /*SV*/
+.color_orange,.color_AR {background-color: #ea5e00;} /*ENAC*/
+.color_red,.color_GC,.color_SIE {background-color: #ae0010;} /*ENAC = GC, AR, SIE */
+.color_purple,.color_MT,.color_GM {background-color: #8972d5;} /*STI = MT, GM, MX, EL*/
+.color_darkpurple,.color_IF,.color_MX {background-color: #5c44a0;} /*STI*/
+.color_pink,.color_MTE{background-color: #990165}/*CDM*/
+.color_dark {background-color: #222;}
+.color_transparent {background-color: transparent;}
+
+/* ======================
+ GLOBAL STRUCTURE
+========================= */
+
+/* Z-INDEX
+0 : content
+10 : footer
+20 : header
+
+
+/* ==== BODY ============ */
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+   	background-color: #333;
+   	color: #FFF;
+    padding: 0px;
+    margin: 0px;
+    overflow-x:hidden;
+}
+/* ======= HEADER ======= */
+div.main_header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right:0px;
+	height: 58px;
+	padding: 0px;
+	padding-left:100px;
+	padding-right: 55px;
+	background-color: #000;
+	z-index: 22;
+}
+
+/* Dropbown from header */
+div.dropdown {
+	position: absolute;
+	display: none;
+	top: 58px;
+	left: 0px;
+	right:0px;
+	z-index: 21;
+}
+a.dropdown_option, div.dropdown_option {
+	color:#FFF;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	left:0px;
+	right: 0px;
+	height: 18px;
+	padding: 20px;
+	padding-left:100px;
+	font-size: 18px;
+}
+
+a.dropdown_option:hover, div.dropdown_option:hover {
+	background-color: #FFF;
+	color:#000;
+	cursor: pointer;
+}
+
+/* Header logo */
+div#header_logo {
+	position: absolute;	
+	top:0px;
+	left:20px;
+	width: 55px;
+	background-color: #BD2F50;
+	/* Position for image */
+	text-align: center;
+	padding: 10px 0px;
+	padding-top: 20px;
+}
+
+/*Header settings */
+div#header_settings {
+	position: absolute;
+	right: 5px;
+	top :10px;
+	height: 40px;
+	width: 45px;
+	background-image: url('/img/icon_settings.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index:23;
+}
+div#header_settings:hover {
+	cursor: pointer;
+}
+
+/* Header search bar */
+input#header_transparent {
+	font-family: 'Raleway', sans-serif;
+	background-color: transparent;
+    font-size: 18px;
+    color:#FFF;
+    width: 100%;
+    max-width: 100%;
+    outline:none;
+    margin: 0px;
+    padding: 20px 0px;
+    border: 0px;
+}
+
+/* Header unimportant text */
+span.unimportant {
+	color:#CCC;
+}
+
+/* ======= CENTER ======= */
+div.main_center {
+	position: absolute;
+	left:0px;
+	right:0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width:450px;
+	top:20%;
+	padding-bottom: 50px;
+}
+
+/* ======= FOOTER ======= */
+div.main_footer {
+	position: fixed;
+	text-align: center;
+	left:0px;
+	right:0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width:400px;
+	bottom:0px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	background-color: #333;
+	z-index: 10;
+}
+
+/* So we can scroll past the footer */
+div.footer_space {
+	height: 70px;
+}
+
+/* Line for footer */
+div.line {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url('../img/white.png');
+	background-repeat: repeat-x;
+	background-position: 0px 7px;
+	padding-bottom: 10px;
+}
+span.line_text {
+	background-color: #333;
+	padding: 0 20px;
+}
+/* Editor  Table */
+table.section_table td {
+	border-left: 1px dashed rgba(255,255,255,0.5);
+}
+
+table.section_table td.nolign {
+	border-left: 0px;
+}

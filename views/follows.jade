@@ -1,0 +1,25 @@
+-# Extend the layout (need a #title and #header)
+-#
+
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/social.css')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	.social_holder
+		img(src='img/profile.png', alt='', style='padding:15px;')
+		| <br>
+		| Your follows
+	.social_holder
+		span.points.association #{fnum}<br>
+		| following
+	.social_holder(style='text-align:left; padding-left:60px')
+		- if(follows&&follows.length>0)
+			- for(var i=0; i<follows.length;i++)
+				- if(follows[i]&&follows[i]!==null)
+					span.association +1 
+					| - #{follows[i]}
+					br

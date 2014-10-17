@@ -1,0 +1,29 @@
+-# Extend the layout (need a #title and #header)
+-#
+
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/social.css')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	.social_holder
+		img(src='img/profile.png', alt='', style='padding:15px;')
+		| <br>
+		| Your activity
+	.social_holder
+		span.points.kudos #{kudos}<br>
+		| kudos
+	.social_holder(style='text-align:left; padding-left:60px')
+		- if(history&&history.length>0)
+			- for(var i=history.length-1; i>=0;i--)
+				- if(history[i]&&history[i]!==null)
+					- var index  = history[i].indexOf(' ');
+					-if(index!==-1)
+						- var kuds = history[i].slice(0, index).trim();
+						- var rest = history[i].slice(index).toLowerCase().trim();
+						span.kudos #{kuds} 
+						|  - #{rest}
+						br

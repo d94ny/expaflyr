@@ -1,0 +1,251 @@
+-# Extend the layout (need a #title and #header)
+extend layout
+block css
+
+	link(rel='stylesheet', href='css/camipro.css')
+	link(rel='stylesheet', href='css/social.css')
+
+-# This means we define the 'content block' needed in layout
+block content
+
+	- if(activity)
+		- for(var i=0; i<activity.length;i++)
+			- if(activity[i]&&activity[i]!==null)
+				- var a = activity[i];
+				- if(a.kind == 'attends')
+
+					.event_header
+						div.line
+							span.line_text
+								a.friend(href='/u/#{a.user}') #{a.user} 
+								span.action attends 
+								a.subject(href='/#{a.content.event._id}') #{a.content.event.name}
+					.camipro
+						.whitebox
+
+							- var sections = a.content.event.sections
+							- if (sections!=null&&sections instanceof Array)
+								- for (var j=0;j<sections.length;j++)
+									div(class='camipro_color color_#{sections[j]}', style='width : #{1/sections.length*100}%;')
+										.camipro_footer
+											span.section #{sections[j]}
+							- else
+								.camipro_partition1_1.camipro_color.color_red
+										.camipro_footer
+											span.section All Students
+
+						.arrow_up
+						.blackbox.compact
+							.blackbox_info
+								| #{a.content.event.location}
+								span.action  | 
+								| TO-DO
+
+				- else if(a.kind == 'attend')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend #{a.user} 
+								span.action attend 
+								| #{a.content.name}
+
+						.social_holder
+							span.points.kudos +#{a.content.kudos}
+
+				- else if(a.kind == 'attendsYour')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend #{a.user} 
+								span.action attends your 
+								| #{a.content.name}
+
+						.social_holder
+							span.points.kudos +#{a.content.kudos}
+
+
+				- else if(a.kind == 'addfriend')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend #{a.user} 
+								span.action added 
+								| #{a.content.friend}
+
+						.social_holder
+							span.points.kudos +#{a.content.kudos}
+
+				- else if(a.kind == 'creator')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend you 
+								span.action created 
+								| #{a.content.name}
+
+						.social_holder
+							span.points.kudos +#{a.content.kudos}
+
+				- else if(a.kind == 'follow')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend #{a.user} 
+								span.action follow 
+								| #{a.content.assos}
+
+						.social_holder
+							span.points.kudos +#{a.content.kudos}
+
+				- else if(a.kind == 'throws')
+
+					.event_header
+						div.line
+							span.line_text
+								span.association #{a.user} 
+								span.action throws 
+								| #{a.content.event.name}
+
+					.camipro
+						.whitebox
+
+							- var sections = a.content.event.sections
+							- if (sections!=null&&sections instanceof Array)
+								- for (var j=0;j<sections.length;j++)
+									div(class='camipro_color color_#{sections[j]}', style='width : #{1/sections.length*100}%;')
+										.camipro_footer
+											span.section #{sections[j]}
+							- else
+								.camipro_partition1_1.camipro_color.color_red
+										.camipro_footer
+											span.section All Students
+
+						.arrow_up
+						.blackbox.compact
+							.blackbox_info
+								| #{a.content.event.location}
+								span.action  | 
+								| TO-DO
+
+				- else if(a.kind == 'created')
+
+					.event_header
+						div.line
+							span.line_text
+								span.friend #{a.user} 
+								span.action created 
+								| #{a.content.event.name}
+
+					.camipro
+						.whitebox
+
+							- var sections = a.content.event.sections
+							- if (sections!=null&&sections instanceof Array)
+								- for (var j=0;j<sections.length;j++)
+									div(class='camipro_color color_#{sections[j]}', style='width : #{1/sections.length*100}%;')
+										.camipro_footer
+											span.section #{sections[j]}
+							- else
+								.camipro_partition1_1.camipro_color.color_red
+										.camipro_footer
+											span.section All Students
+
+						.arrow_up
+						.blackbox.compact
+							.blackbox_info
+								| #{a.content.event.location}
+								span.action  | 
+								| TO-DO
+
+
+	//-
+		.event_header
+			div.line
+				span.line_text
+					span.friend Dennis 
+					span.action attends 
+					| Soiré Ludic
+
+			.social_holder
+				span.points.kudos +1
+
+		.event_header
+			div.line
+				span.line_text
+					span.friend Dennis 
+					span.action goes to 
+					| Soiré Ludic
+		.camipro
+			.whitebox
+				.camipro_color.color_lightgreen(style='width:#{1/3*100}%;')
+					.camipro_footer
+						span.section SV
+				.camipro_color.color_darkpurple(style='width:#{1/3*100}%;')
+					.camipro_footer
+						span.section MX
+				.camipro_color.color_darkblue(style='width:#{1/3*100}%;')
+					.camipro_footer
+						span.section PH
+			.arrow_up
+			.blackbox.compact
+				.blackbox_info
+					| INJ 234
+					span.action  | 
+					| Wed 24 Jul
+
+		.event_header
+			div.line
+				span.line_text
+					span.association Agepoly 
+					span.action throws 
+					| ByeBye Party 2013
+		.camipro
+			.whitebox
+				.camipro_color.color_yellow(style='width:#{1/2*100}%;')
+					.camipro_footer
+						span.section AR
+				.camipro_color.color_blue(style='width:#{1/2*100}%;')
+					.camipro_footer
+						span.section IC
+			.arrow_up
+			.blackbox.compact
+				.blackbox_info
+					| EL 51
+					span.action  | 
+					| Fri 17 May
+
+		.event_header
+			div.line
+				span.line_text
+					span.popular Popular 
+					span.action right now 
+					| Balelec
+		.camipro
+			.whitebox
+				.camipro_color.color_red(style='width:#{1/2*100}%;')
+					.camipro_footer
+						span.section GH
+				.camipro_color.color_darkblue(style='width:#{1/2*100}%;')
+					.camipro_footer
+						span.section AX
+			.arrow_up
+			.blackbox.compact
+				.blackbox_info
+					| Esplanade
+					span.action  | 
+					| Wed 5 Apr
+
+block footer
+
+block secondary_panel
+
+	.secondary_body
+		div.secondary_body_title Your Settings
+	.secondary_footer
+			a.button(href='404') delete account
+
